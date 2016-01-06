@@ -1,0 +1,14 @@
+{
+  "name": "attachmentgenie-roles",
+  "version": "0.1.0",
+  "author": "attachmentgenie",
+  "summary": "Setup roles",
+  "license": "Apache-2.0",
+  "source": "https://github.com/attachmentgenie/attachmentgenie-roles.git",
+  "project_page": "https://github.com/attachmentgenie/attachmentgenie-roles",
+  "issues_url": "https://github.com/attachmentgenie/attachmentgenie-roles/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
