@@ -1,9 +1,14 @@
 fixtures:
   repositories:
     concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
+    epel: "https://github.com/stahnma/puppet-module-epel"
+    firewall: "https://github.com/puppetlabs/puppetlabs-firewall.git"
     haproxy: "https://github.com/puppetlabs/puppetlabs-haproxy.git"
+    ntp:  "https://github.com/puppetlabs/puppetlabs-ntp.git"
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
     profiles: "https://github.com/attachmentgenie/attachmentgenie-profiles.git"
+    selinux: "https://github.com/jfryman/puppet-selinux"
     stacks: "https://github.com/attachmentgenie/attachmentgenie-stacks.git"
+    timezone: "https://github.com/attachmentgenie/attachmentgenie-timezone"
   symlinks:
     "roles": "#{source_dir}"
