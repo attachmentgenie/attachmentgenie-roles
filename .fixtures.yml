@@ -7,6 +7,7 @@ fixtures:
     ntp:  "https://github.com/puppetlabs/puppetlabs-ntp.git"
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
     profiles: "https://github.com/attachmentgenie/attachmentgenie-profiles.git"
+    puppet: "https://github.com/theforeman/puppet-puppet.git"
     selinux: "https://github.com/jfryman/puppet-selinux"
     stacks: "https://github.com/attachmentgenie/attachmentgenie-stacks.git"
     timezone: "https://github.com/attachmentgenie/attachmentgenie-timezone"

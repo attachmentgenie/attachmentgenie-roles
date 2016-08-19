@@ -2,9 +2,13 @@ require 'spec_helper'
 describe 'roles::proxy' do
   let :facts do
   {
-    :osfamily       => 'RedHat',
-    :ipaddress      => '127.0.0.1',
-    :ipaddress_eth1 => '127.0.0.1',
+    :ipaddress              => '127.0.0.1',
+    :ipaddress_eth1         => '127.0.0.1',
+    :kernel                 => 'linux',
+    :osfamily               => 'RedHat',
+    :operatingsystemrelease => '7.2,',
+    :os_maj_release         => '7',
+    :puppetversion          => '3.8.7',
   }
   end
   context 'with defaults for all parameters' do
