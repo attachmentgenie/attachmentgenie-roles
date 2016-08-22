@@ -1,6 +1,6 @@
 require 'spec_helper'
-describe 'roles::proxy' do
+describe 'roles::node' do
   context 'with defaults for all parameters' do
-    it { should contain_class('roles::proxy') }
+    it { should contain_class('roles::node') }
   end
 end

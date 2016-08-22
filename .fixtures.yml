@@ -1,5 +1,6 @@
 fixtures:
   repositories:
+    apache: "https://github.com/puppetlabs/puppetlabs-apache.git"
     concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
     epel: "https://github.com/stahnma/puppet-module-epel"
     firewall: "https://github.com/puppetlabs/puppetlabs-firewall.git"
