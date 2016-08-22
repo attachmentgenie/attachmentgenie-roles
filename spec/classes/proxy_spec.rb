@@ -6,6 +6,7 @@ describe 'roles::proxy' do
     :ipaddress_eth1         => '127.0.0.1',
     :kernel                 => 'linux',
     :osfamily               => 'RedHat',
+    :operatingsystem        => 'centos',
     :operatingsystemrelease => '7.2,',
     :os_maj_release         => '7',
     :puppetversion          => '3.8.7',
