@@ -6,6 +6,7 @@
 class roles::website {
   class { '::stacks::bootstrap': } ->
   class { '::stacks::monitoring': } ->
+  class { '::stacks::runtime': } ->
   class { '::stacks::website': } ->
   class { '::stacks::proxy': }
 }
