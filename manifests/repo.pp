@@ -1,6 +1,13 @@
+# This class can be used to setup a repository.
+#
+# @example when declaring the repo role
+#  class { '::roles::repo': }
+#
 class roles::repo {
-  require ::stacks::bootstrap
-
+  class { '::stacks::bootstrap': } ->
+  class { '::stacks::monitoring': } ->
+  class { '::stacks::orchestration': } ->
+  class { '::stacks::runtime': } ->
+  class { '::stacks::security': } ->
   class { '::stacks::gitlab': }
-  class { '::stacks::pulp': }
 }
