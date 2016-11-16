@@ -7,5 +7,6 @@ class roles::metrics () {
   class { '::stacks::bootstrap': } ->
   class { '::stacks::monitoring': } ->
   class { '::stacks::runtime': } ->
-  class { '::stacks::metrics': }
+  class { '::stacks::metrics': } ->
+  class { '::stacks::website': }
 }
