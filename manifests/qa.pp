@@ -9,5 +9,6 @@ class roles::qa {
   class { '::stacks::orchestration': } ->
   class { '::stacks::runtime': } ->
   class { '::stacks::security': } ->
-  class { '::stacks::testing': }
+  class { '::stacks::testing': } ->
+  class { '::stacks::website': }
 }
