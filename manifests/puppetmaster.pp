@@ -5,5 +5,6 @@
 #
 class roles::puppetmaster () {
   class { '::stacks::bootstrap': } ->
+  class { '::stacks::database': } ->
   class { '::stacks::puppetmaster': }
 }
