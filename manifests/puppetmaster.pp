@@ -6,5 +6,9 @@
 class roles::puppetmaster () {
   class { '::stacks::bootstrap': } ->
   class { '::stacks::database': } ->
+  class { '::stacks::monitoring': } ->
+  class { '::stacks::orchestration': } ->
+  class { '::stacks::runtime': } ->
+  class { '::stacks::security': } ->
   class { '::stacks::puppetmaster': }
 }
