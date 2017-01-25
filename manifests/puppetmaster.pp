@@ -11,4 +11,9 @@ class roles::puppetmaster () {
   class { '::stacks::runtime': } ->
   class { '::stacks::security': } ->
   class { '::stacks::puppetmaster': }
+
+  if defined(Class['profiles::postgresql']) and defined(Class['profiles::puppetdb']) {
+    Postgresql::Server::Db <||> -> Class['::puppetdb::server']
+    Postgresql::Server::Db <||> -> Class['::puppetdb::server::validate_db']
+  }
 }
