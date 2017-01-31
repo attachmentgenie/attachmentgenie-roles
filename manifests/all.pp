@@ -15,9 +15,18 @@ class roles::all () {
   class { '::stacks::metrics': } ->
   class { '::stacks::orchestration': } ->
   class { '::stacks::proxy': } ->
-  class { '::stacks::puppetmaster': } ->
+  class { '::stacks::puppet': } ->
   class { '::stacks::security': } ->
   class { '::stacks::streaming': } ->
   class { '::stacks::testing': } ->
   class { '::stacks::website': }
+
+  if defined(Class['profiles::postgresql']) and defined(Class['profiles::puppetdb']) {
+    Postgresql::Server::Db <||> -> Class['::puppetdb::server']
+    Postgresql::Server::Db <||> -> Class['::puppetdb::server::validate_db']
+  }
+
+  if defined(Class['profiles::memcached']) and defined(Class['profiles::foreman']) {
+    Class['::memcached'] -> Class['::foreman']
+  }
 }
