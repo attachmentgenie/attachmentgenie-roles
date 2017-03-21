@@ -5,6 +5,7 @@
 #
 class roles::streaming () {
   class { '::stacks::bootstrap': } ->
+  class { '::stacks::tools': } ->
   class { '::stacks::runtime': } ->
   class { '::stacks::streaming': }
 }

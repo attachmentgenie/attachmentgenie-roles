@@ -5,6 +5,7 @@
 #
 class roles::website {
   class { '::stacks::bootstrap': } ->
+  class { '::stacks::tools': } ->
   class { '::stacks::monitoring': } ->
   class { '::stacks::runtime': } ->
   class { '::stacks::website': } ->

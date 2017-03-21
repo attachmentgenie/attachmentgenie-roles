@@ -5,6 +5,7 @@
 #
 class roles::alerting () {
   class { '::stacks::bootstrap': } ->
+  class { '::stacks::tools': } ->
   class { '::stacks::monitoring': } ->
   class { '::stacks::runtime': } ->
   class { '::stacks::database': } ->

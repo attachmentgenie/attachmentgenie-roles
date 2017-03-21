@@ -5,6 +5,7 @@
 #
 class roles::repo {
   class { '::stacks::bootstrap': } ->
+  class { '::stacks::tools': } ->
   class { '::stacks::monitoring': } ->
   class { '::stacks::orchestration': } ->
   class { '::stacks::runtime': } ->
