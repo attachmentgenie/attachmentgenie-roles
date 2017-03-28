@@ -5,6 +5,7 @@
 #
 class roles::metrics () {
   class { '::stacks::bootstrap': } ->
+  class { '::stacks::cache': } ->
   class { '::stacks::tools': } ->
   class { '::stacks::database': } ->
   class { '::stacks::monitoring': } ->
