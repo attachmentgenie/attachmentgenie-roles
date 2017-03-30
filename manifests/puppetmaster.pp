@@ -4,16 +4,16 @@
 #  class { '::roles::puppetmaster': }
 #
 class roles::puppetmaster () {
-  class { '::stacks::bootstrap': } ->
-  class { '::stacks::tools': } ->
-  class { '::stacks::cache': } ->
-  class { '::stacks::database': } ->
-  class { '::stacks::monitoring': } ->
-  class { '::stacks::mq': } ->
-  class { '::stacks::orchestration': } ->
-  class { '::stacks::runtime': } ->
-  class { '::stacks::security': } ->
-  class { '::stacks::puppet': }
+  class { '::stacks::bootstrap': }
+  -> class { '::stacks::tools': }
+  -> class { '::stacks::cache': }
+  -> class { '::stacks::database': }
+  -> class { '::stacks::monitoring': }
+  -> class { '::stacks::mq': }
+  -> class { '::stacks::orchestration': }
+  -> class { '::stacks::runtime': }
+  -> class { '::stacks::security': }
+  -> class { '::stacks::puppet': }
 
   if defined(Class['profiles::postgresql']) and defined(Class['profiles::puppetdb']) {
     Postgresql::Server::Db <||> -> Class['::puppetdb::server']

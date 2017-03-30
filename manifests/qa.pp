@@ -4,12 +4,12 @@
 #  class { '::roles::qa': }
 #
 class roles::qa {
-  class { '::stacks::bootstrap': } ->
-  class { '::stacks::tools': } ->
-  class { '::stacks::monitoring': } ->
-  class { '::stacks::orchestration': } ->
-  class { '::stacks::runtime': } ->
-  class { '::stacks::security': } ->
-  class { '::stacks::testing': } ->
-  class { '::stacks::website': }
+  class { '::stacks::bootstrap': }
+  -> class { '::stacks::tools': }
+  -> class { '::stacks::monitoring': }
+  -> class { '::stacks::orchestration': }
+  -> class { '::stacks::runtime': }
+  -> class { '::stacks::security': }
+  -> class { '::stacks::testing': }
+  -> class { '::stacks::website': }
 }

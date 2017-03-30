@@ -4,11 +4,11 @@
 #  class { '::roles::database': }
 #
 class roles::database () {
-  class { '::stacks::bootstrap': } ->
-  class { '::stacks::tools': } ->
-  class { '::stacks::monitoring': } ->
-  class { '::stacks::orchestration': } ->
-  class { '::stacks::runtime': } ->
-  class { '::stacks::security': } ->
-  class { '::stacks::database': }
+  class { '::stacks::bootstrap': }
+  -> class { '::stacks::tools': }
+  -> class { '::stacks::monitoring': }
+  -> class { '::stacks::orchestration': }
+  -> class { '::stacks::runtime': }
+  -> class { '::stacks::security': }
+  -> class { '::stacks::database': }
 }

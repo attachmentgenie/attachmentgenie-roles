@@ -4,10 +4,10 @@
 #  class { '::roles::website': }
 #
 class roles::website {
-  class { '::stacks::bootstrap': } ->
-  class { '::stacks::tools': } ->
-  class { '::stacks::monitoring': } ->
-  class { '::stacks::runtime': } ->
-  class { '::stacks::website': } ->
-  class { '::stacks::proxy': }
+  class { '::stacks::bootstrap': }
+  -> class { '::stacks::tools': }
+  -> class { '::stacks::monitoring': }
+  -> class { '::stacks::runtime': }
+  -> class { '::stacks::website': }
+  -> class { '::stacks::proxy': }
 }

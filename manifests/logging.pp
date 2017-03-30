@@ -4,10 +4,10 @@
 #  class { '::roles::logging': }
 #
 class roles::logging () {
-  class { '::stacks::bootstrap': } ->
-  class { '::stacks::tools': } ->
-  class { '::stacks::monitoring': } ->
-  class { '::stacks::runtime': } ->
-  class { '::stacks::logging': } ->
-  class { '::stacks::website': }
+  class { '::stacks::bootstrap': }
+  -> class { '::stacks::tools': }
+  -> class { '::stacks::monitoring': }
+  -> class { '::stacks::runtime': }
+  -> class { '::stacks::logging': }
+  -> class { '::stacks::website': }
 }

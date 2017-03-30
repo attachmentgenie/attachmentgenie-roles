@@ -4,8 +4,8 @@
 #  class { '::roles::streaming': }
 #
 class roles::streaming () {
-  class { '::stacks::bootstrap': } ->
-  class { '::stacks::tools': } ->
-  class { '::stacks::runtime': } ->
-  class { '::stacks::streaming': }
+  class { '::stacks::bootstrap': }
+  -> class { '::stacks::tools': }
+  -> class { '::stacks::runtime': }
+  -> class { '::stacks::streaming': }
 }
