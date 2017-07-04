@@ -10,4 +10,11 @@ class roles::logging () {
   -> class { '::stacks::runtime': }
   -> class { '::stacks::logging': }
   -> class { '::stacks::website': }
+
+  if defined(Class['profiles::java']) and defined(Class['profiles::logstash']) {
+    Package['java'] -> Yumrepo['elastic-5.x']
+  }
+  if defined(Class['profiles::java']) and defined(Class['profiles::elasticsearch']) {
+    Package['java'] -> Yumrepo['elasticsearch']
+  }
 }
