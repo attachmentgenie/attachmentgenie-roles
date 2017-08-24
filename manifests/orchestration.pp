@@ -1,14 +1,14 @@
-# This class can be used to setup a basic qa.
+# This class can be used to setup a basic orchestration.
 #
-# @example when declaring the qa role
-#  class { '::roles::qa': }
+# @example when declaring the orchestration role
+#  class { '::roles::orchestration': }
 #
-class roles::qa {
+class roles::orchestration {
   class { '::stacks::bootstrap': }
   -> class { '::stacks::tools': }
   -> class { '::stacks::monitoring': }
+  -> class { '::stacks::orchestration': }
   -> class { '::stacks::runtime': }
   -> class { '::stacks::security': }
-  -> class { '::stacks::testing': }
   -> class { '::stacks::website': }
 }
