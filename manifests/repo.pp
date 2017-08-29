@@ -10,5 +10,6 @@ class roles::repo {
   -> class { '::stacks::orchestration': }
   -> class { '::stacks::runtime': }
   -> class { '::stacks::security': }
-  -> class { '::stacks::gitlab': }
+  -> class { '::stacks::repo': }
+  -> class { '::stacks::website': }
 }
