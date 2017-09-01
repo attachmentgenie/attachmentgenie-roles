@@ -4,23 +4,23 @@
 #  class { '::roles::puppetmaster': }
 #
 class roles::puppetmaster () {
-  class { '::stacks::bootstrap': }
-  -> class { '::stacks::tools': }
-  -> class { '::stacks::cache': }
-  -> class { '::stacks::database': }
-  -> class { '::stacks::monitoring': }
-  -> class { '::stacks::mq': }
-  -> class { '::stacks::orchestration': }
-  -> class { '::stacks::runtime': }
-  -> class { '::stacks::security': }
-  -> class { '::stacks::puppet': }
+  class { '::profiles::bootstrap': }
+  -> class { '::profiles::tools': }
+  -> class { '::profiles::cache': }
+  -> class { '::profiles::database': }
+  -> class { '::profiles::monitoring': }
+  -> class { '::profiles::mq': }
+  -> class { '::profiles::orchestration': }
+  -> class { '::profiles::runtime': }
+  -> class { '::profiles::security': }
+  -> class { '::profiles::puppet': }
 
-  if defined(Class['profiles::postgresql']) and defined(Class['profiles::puppetdb']) {
+  if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::puppet::puppetdb']) {
     Postgresql::Server::Db <||> -> Class['::puppetdb::server']
     Postgresql::Server::Db <||> -> Class['::puppetdb::server::validate_db']
   }
 
-  if defined(Class['profiles::memcached']) and defined(Class['profiles::foreman']) {
+  if defined(Class['profiles::cache::memcached']) and defined(Class['profiles::puppet::foreman']) {
     Class['::memcached'] -> Class['::foreman']
   }
 }

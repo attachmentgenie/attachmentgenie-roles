@@ -4,14 +4,14 @@
 #  class { '::roles::metrics': }
 #
 class roles::metrics () {
-  class { '::stacks::bootstrap': }
-  -> class { '::stacks::cache': }
-  -> class { '::stacks::tools': }
-  -> class { '::stacks::database': }
-  -> class { '::stacks::monitoring': }
-  -> class { '::stacks::runtime': }
-  -> class { '::stacks::alerting': }
-  -> class { '::stacks::mail': }
-  -> class { '::stacks::metrics': }
-  -> class { '::stacks::website': }
+  class { '::profiles::bootstrap': }
+  -> class { '::profiles::cache': }
+  -> class { '::profiles::tools': }
+  -> class { '::profiles::database': }
+  -> class { '::profiles::monitoring': }
+  -> class { '::profiles::runtime': }
+  -> class { '::profiles::alerting': }
+  -> class { '::profiles::mail': }
+  -> class { '::profiles::metrics': }
+  -> class { '::profiles::website': }
 }

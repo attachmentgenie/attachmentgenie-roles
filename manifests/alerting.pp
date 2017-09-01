@@ -4,12 +4,12 @@
 #  class { '::roles::alerting': }
 #
 class roles::alerting () {
-  class { '::stacks::bootstrap': }
-  -> class { '::stacks::tools': }
-  -> class { '::stacks::monitoring': }
-  -> class { '::stacks::runtime': }
-  -> class { '::stacks::database': }
-  -> class { '::stacks::alerting': }
-  -> class { '::stacks::mail': }
-  -> class { '::stacks::website': }
+  class { '::profiles::bootstrap': }
+  -> class { '::profiles::tools': }
+  -> class { '::profiles::monitoring': }
+  -> class { '::profiles::orchestration': }
+  -> class { '::profiles::runtime': }
+  -> class { '::profiles::security': }
+  -> class { '::profiles::alerting': }
+  -> class { '::profiles::website': }
 }

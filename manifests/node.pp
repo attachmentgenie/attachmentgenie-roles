@@ -4,10 +4,10 @@
 #  class { '::roles::node': }
 #
 class roles::node {
-  class { '::stacks::bootstrap': }
-  -> class { '::stacks::tools': }
-  -> class { '::stacks::monitoring': }
-  -> class { '::stacks::orchestration': }
-  -> class { '::stacks::runtime': }
-  -> class { '::stacks::security': }
+  class { '::profiles::bootstrap': }
+  -> class { '::profiles::tools': }
+  -> class { '::profiles::monitoring': }
+  -> class { '::profiles::orchestration': }
+  -> class { '::profiles::runtime': }
+  -> class { '::profiles::security': }
 }

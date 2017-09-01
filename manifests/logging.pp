@@ -4,17 +4,17 @@
 #  class { '::roles::logging': }
 #
 class roles::logging () {
-  class { '::stacks::bootstrap': }
-  -> class { '::stacks::tools': }
-  -> class { '::stacks::monitoring': }
-  -> class { '::stacks::runtime': }
-  -> class { '::stacks::logging': }
-  -> class { '::stacks::website': }
+  class { '::profiles::bootstrap': }
+  -> class { '::profiles::tools': }
+  -> class { '::profiles::monitoring': }
+  -> class { '::profiles::runtime': }
+  -> class { '::profiles::logging': }
+  -> class { '::profiles::website': }
 
-  if defined(Class['profiles::java']) and defined(Class['profiles::logstash']) {
+  if defined(Class['profiles::runtime::java']) and defined(Class['profiles::logstash']) {
     Package['java'] -> Yumrepo['elastic-5.x']
   }
-  if defined(Class['profiles::java']) and defined(Class['profiles::elasticsearch']) {
+  if defined(Class['profiles::runtime::java']) and defined(Class['profiles::logging::elasticsearch']) {
     Package['java'] -> Yumrepo['elasticsearch']
   }
 }

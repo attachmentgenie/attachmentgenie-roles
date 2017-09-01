@@ -1,6 +1,6 @@
 fixtures:
   repositories:
-    stacks: "https://github.com/attachmentgenie/attachmentgenie-stacks.git"
+    profiles: "https://github.com/attachmentgenie/attachmentgenie-profiles.git"
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
   symlinks:
     "roles": "#{source_dir}"

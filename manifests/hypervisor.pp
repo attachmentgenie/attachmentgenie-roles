@@ -1,15 +1,14 @@
-# This class can be used to setup a repository.
+# This class can be used to setup a hypervisor stack.
 #
-# @example when declaring the repo role
-#  class { '::roles::repo': }
+# @example when declaring the hypervisor role
+#  class { '::roles::hypervisor': }
 #
-class roles::repo {
+class roles::hypervisor () {
   class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::security': }
-  -> class { '::profiles::repo': }
-  -> class { '::profiles::website': }
+  -> class { '::profiles::kubernetes': }
 }

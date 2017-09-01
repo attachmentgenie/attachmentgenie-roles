@@ -4,11 +4,11 @@
 #  class { '::roles::orchestration': }
 #
 class roles::orchestration {
-  class { '::stacks::bootstrap': }
-  -> class { '::stacks::tools': }
-  -> class { '::stacks::monitoring': }
-  -> class { '::stacks::orchestration': }
-  -> class { '::stacks::runtime': }
-  -> class { '::stacks::security': }
-  -> class { '::stacks::website': }
+  class { '::profiles::bootstrap': }
+  -> class { '::profiles::tools': }
+  -> class { '::profiles::monitoring': }
+  -> class { '::profiles::orchestration': }
+  -> class { '::profiles::runtime': }
+  -> class { '::profiles::security': }
+  -> class { '::profiles::website': }
 }
