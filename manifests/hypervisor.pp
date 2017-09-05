@@ -4,11 +4,13 @@
 #  class { '::roles::hypervisor': }
 #
 class roles::hypervisor () {
-  class { '::profiles::bootstrap': }
+  anchor { 'hypervisor::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::security': }
   -> class { '::profiles::kubernetes': }
+  -> anchor { 'hypervisor::end': }
 }

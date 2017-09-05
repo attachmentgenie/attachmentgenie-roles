@@ -4,12 +4,14 @@
 #  class { '::roles::logging': }
 #
 class roles::logging () {
-  class { '::profiles::bootstrap': }
+  anchor { 'logging::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::logging': }
   -> class { '::profiles::website': }
+  -> anchor { 'logging::end': }
 
   if defined(Class['profiles::runtime::java']) and defined(Class['profiles::logstash']) {
     Package['java'] -> Yumrepo['elastic-5.x']

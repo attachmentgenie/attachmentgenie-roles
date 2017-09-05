@@ -4,10 +4,12 @@
 #  class { '::roles::node': }
 #
 class roles::node {
-  class { '::profiles::bootstrap': }
+  anchor { 'node::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::security': }
+  -> anchor { 'node::end': }
 }

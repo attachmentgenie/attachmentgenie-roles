@@ -4,9 +4,11 @@
 #  class { '::roles::website': }
 #
 class roles::website {
-  class { '::profiles::bootstrap': }
+  anchor { 'website::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::website': }
+  -> anchor { 'website::end': }
 }

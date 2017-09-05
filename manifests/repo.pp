@@ -4,7 +4,8 @@
 #  class { '::roles::repo': }
 #
 class roles::repo {
-  class { '::profiles::bootstrap': }
+  anchor { 'repo::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
@@ -12,4 +13,5 @@ class roles::repo {
   -> class { '::profiles::security': }
   -> class { '::profiles::repo': }
   -> class { '::profiles::website': }
+  -> anchor { 'repo::end': }
 }

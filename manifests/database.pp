@@ -4,11 +4,13 @@
 #  class { '::roles::database': }
 #
 class roles::database () {
-  class { '::profiles::bootstrap': }
+  anchor { 'database::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::security': }
   -> class { '::profiles::database': }
+  -> anchor { 'database::end': }
 }

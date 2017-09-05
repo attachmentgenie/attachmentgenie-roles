@@ -4,7 +4,8 @@
 #  class { '::roles::alerting': }
 #
 class roles::alerting () {
-  class { '::profiles::bootstrap': }
+  anchor { 'alerting::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
@@ -12,4 +13,5 @@ class roles::alerting () {
   -> class { '::profiles::security': }
   -> class { '::profiles::alerting': }
   -> class { '::profiles::website': }
+  -> anchor { 'alerting::end': }
 }

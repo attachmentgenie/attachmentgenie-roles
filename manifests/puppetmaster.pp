@@ -4,7 +4,8 @@
 #  class { '::roles::puppetmaster': }
 #
 class roles::puppetmaster () {
-  class { '::profiles::bootstrap': }
+  anchor { 'puppetmaster::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::cache': }
   -> class { '::profiles::database': }
@@ -14,6 +15,7 @@ class roles::puppetmaster () {
   -> class { '::profiles::runtime': }
   -> class { '::profiles::security': }
   -> class { '::profiles::puppet': }
+  -> anchor { 'puppetmaster::end': }
 
   if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::puppet::puppetdb']) {
     Postgresql::Server::Db <||> -> Class['::puppetdb::server']

@@ -4,11 +4,13 @@
 #  class { '::roles::orchestration': }
 #
 class roles::orchestration {
-  class { '::profiles::bootstrap': }
+  anchor { 'orchestration::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::security': }
   -> class { '::profiles::website': }
+  -> anchor { 'orchestration::end': }
 }

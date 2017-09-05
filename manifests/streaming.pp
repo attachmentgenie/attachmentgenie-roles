@@ -4,8 +4,10 @@
 #  class { '::roles::streaming': }
 #
 class roles::streaming () {
-  class { '::profiles::bootstrap': }
+  anchor { 'streaming::begin': }
+  -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
   -> class { '::profiles::runtime': }
   -> class { '::profiles::streaming': }
+  -> anchor { 'streaming::end': }
 }
