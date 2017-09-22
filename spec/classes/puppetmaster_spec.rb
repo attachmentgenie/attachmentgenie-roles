@@ -1,8 +1,8 @@
 require 'spec_helper'
 describe 'roles::puppetmaster' do
   context 'with defaults for all parameters' do
-    it { should contain_class('roles::puppetmaster') }
-    it { should contain_anchor('puppetmaster::begin') }
-    it { should contain_anchor('puppetmaster::end') }
+    it { is_expected.to contain_class('roles::puppetmaster') }
+    it { is_expected.to contain_anchor('puppetmaster::begin') }
+    it { is_expected.to contain_anchor('puppetmaster::end') }
   end
 end

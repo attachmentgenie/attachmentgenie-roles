@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "author": "attachmentgenie",
   "summary": "Setup roles",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "source": "https://github.com/attachmentgenie/attachmentgenie-roles.git",
   "project_page": "https://github.com/attachmentgenie/attachmentgenie-roles",
   "issues_url": "https://github.com/attachmentgenie/attachmentgenie-roles/issues",
