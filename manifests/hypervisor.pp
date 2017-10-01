@@ -3,14 +3,8 @@
 # @example when declaring the hypervisor role
 #  class { '::roles::hypervisor': }
 #
-class roles::hypervisor () {
+class roles::hypervisor inherits roles::node {
   anchor { 'hypervisor::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::tools': }
-  -> class { '::profiles::monitoring': }
-  -> class { '::profiles::orchestration': }
-  -> class { '::profiles::runtime': }
-  -> class { '::profiles::security': }
   -> class { '::profiles::kubernetes': }
   -> anchor { 'hypervisor::end': }
 }

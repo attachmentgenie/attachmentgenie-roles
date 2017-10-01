@@ -3,17 +3,11 @@
 # @example when declaring the puppetmaster role
 #  class { '::roles::puppetmaster': }
 #
-class roles::puppetmaster () {
+class roles::puppetmaster inherits roles::node {
   anchor { 'puppetmaster::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::tools': }
   -> class { '::profiles::cache': }
   -> class { '::profiles::database': }
-  -> class { '::profiles::monitoring': }
   -> class { '::profiles::mq': }
-  -> class { '::profiles::orchestration': }
-  -> class { '::profiles::runtime': }
-  -> class { '::profiles::security': }
   -> class { '::profiles::puppet': }
   -> anchor { 'puppetmaster::end': }
 

@@ -3,12 +3,8 @@
 # @example when declaring the website role
 #  class { '::roles::website': }
 #
-class roles::website {
+class roles::website inherits roles::node {
   anchor { 'website::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::tools': }
-  -> class { '::profiles::monitoring': }
-  -> class { '::profiles::runtime': }
   -> class { '::profiles::website': }
   -> anchor { 'website::end': }
 }

@@ -3,14 +3,8 @@
 # @example when declaring the metrics role
 #  class { '::roles::metrics': }
 #
-class roles::metrics () {
+class roles::metrics inherits roles::node {
   anchor { 'metrics::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::cache': }
-  -> class { '::profiles::tools': }
-  -> class { '::profiles::database': }
-  -> class { '::profiles::monitoring': }
-  -> class { '::profiles::runtime': }
   -> class { '::profiles::metrics': }
   -> class { '::profiles::mail': }
   -> class { '::profiles::alerting': }

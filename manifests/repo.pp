@@ -3,14 +3,8 @@
 # @example when declaring the repo role
 #  class { '::roles::repo': }
 #
-class roles::repo {
+class roles::repo inherits roles::node {
   anchor { 'repo::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::tools': }
-  -> class { '::profiles::monitoring': }
-  -> class { '::profiles::orchestration': }
-  -> class { '::profiles::runtime': }
-  -> class { '::profiles::security': }
   -> class { '::profiles::repo': }
   -> class { '::profiles::website': }
   -> anchor { 'repo::end': }

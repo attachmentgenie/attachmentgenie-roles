@@ -1,8 +1,14 @@
 require 'spec_helper'
 describe 'roles::logging' do
-  context 'with defaults for all parameters' do
-    it { is_expected.to contain_class('roles::logging') }
-    it { is_expected.to contain_anchor('logging::begin') }
-    it { is_expected.to contain_anchor('logging::end') }
+  on_os_under_test.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) { facts }
+      context 'with defaults for all parameters' do
+        it { is_expected.to contain_class('roles::logging') }
+        it { is_expected.to contain_class('roles::node') }
+        it { is_expected.to contain_anchor('logging::begin') }
+        it { is_expected.to contain_anchor('logging::end') }
+      end
+    end
   end
 end

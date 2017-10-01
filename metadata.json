@@ -7,6 +7,18 @@
   "source": "https://github.com/attachmentgenie/attachmentgenie-roles.git",
   "project_page": "https://github.com/attachmentgenie/attachmentgenie-roles",
   "issues_url": "https://github.com/attachmentgenie/attachmentgenie-roles/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "9"
+      ],
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",

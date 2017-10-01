@@ -3,20 +3,18 @@
 # @example when declaring the logging role
 #  class { '::roles::logging': }
 #
-class roles::logging () {
+class roles::logging inherits roles::node {
   anchor { 'logging::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::tools': }
-  -> class { '::profiles::monitoring': }
-  -> class { '::profiles::runtime': }
   -> class { '::profiles::logging': }
   -> class { '::profiles::website': }
   -> anchor { 'logging::end': }
 
-  if defined(Class['profiles::runtime::java']) and defined(Class['profiles::logstash']) {
-    Package['java'] -> Yumrepo['elastic-5.x']
-  }
-  if defined(Class['profiles::runtime::java']) and defined(Class['profiles::logging::elasticsearch']) {
-    Package['java'] -> Yumrepo['elasticsearch']
+  if $::osfamily == 'RedHat' {
+    if defined(Class['profiles::runtime::java']) and defined(Class['profiles::monitoring::logstash']) {
+      Package['java'] -> Yumrepo['elastic-5.x']
+    }
+    if defined(Class['profiles::runtime::java']) and defined(Class['profiles::logging::elasticsearch']) {
+      Package['java'] -> Yumrepo['elasticsearch']
+    }
   }
 }
