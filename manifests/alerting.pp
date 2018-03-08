@@ -10,7 +10,7 @@ class roles::alerting inherits roles::node {
   -> class { '::profiles::website': }
   -> anchor { 'alerting::end': }
 
-  if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::alerting::icinga2']) {
+  if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::monitoring::icinga2']) {
     Postgresql::Server::Db <||> -> Exec['idopgsql-import-schema']
   }
 
