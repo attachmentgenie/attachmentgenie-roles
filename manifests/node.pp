@@ -7,6 +7,7 @@ class roles::node {
   anchor { 'node::begin': }
   -> class { '::profiles::bootstrap': }
   -> class { '::profiles::tools': }
+  -> class { '::profiles::metrics': }
   -> class { '::profiles::monitoring': }
   -> class { '::profiles::orchestration': }
   -> class { '::profiles::runtime': }
