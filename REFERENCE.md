@@ -25,7 +25,7 @@
 
 ## Classes
 
-### `roles::alerting`
+### <a name="rolesalerting"></a>`roles::alerting`
 
 This class can be used to setup a alerting stack.
 
@@ -37,7 +37,7 @@ This class can be used to setup a alerting stack.
 class { '::roles::alerting': }
 ```
 
-### `roles::dashboard`
+### <a name="rolesdashboard"></a>`roles::dashboard`
 
 This class can be used to setup a dashboard stack.
 
@@ -49,7 +49,7 @@ This class can be used to setup a dashboard stack.
 class { '::roles::dashboard': }
 ```
 
-### `roles::database`
+### <a name="rolesdatabase"></a>`roles::database`
 
 This class can be used to setup a database stack.
 
@@ -61,7 +61,7 @@ This class can be used to setup a database stack.
 class { '::roles::database': }
 ```
 
-### `roles::dns`
+### <a name="rolesdns"></a>`roles::dns`
 
 This class can be used to setup a dns stack.
 
@@ -73,7 +73,7 @@ This class can be used to setup a dns stack.
 class { '::roles::dns': }
 ```
 
-### `roles::logging`
+### <a name="roleslogging"></a>`roles::logging`
 
 This class can be used to setup a logging stack.
 
@@ -85,7 +85,7 @@ This class can be used to setup a logging stack.
 class { '::roles::logging': }
 ```
 
-### `roles::metrics`
+### <a name="rolesmetrics"></a>`roles::metrics`
 
 This class can be used to setup a metrics stack.
 
@@ -97,7 +97,7 @@ This class can be used to setup a metrics stack.
 class { '::roles::metrics': }
 ```
 
-### `roles::node`
+### <a name="rolesnode"></a>`roles::node`
 
 This class can be used to setup a basic node.
 
@@ -109,7 +109,7 @@ This class can be used to setup a basic node.
 class { '::roles::node': }
 ```
 
-### `roles::orchestration`
+### <a name="rolesorchestration"></a>`roles::orchestration`
 
 This class can be used to setup a basic orchestration.
 
@@ -121,7 +121,7 @@ This class can be used to setup a basic orchestration.
 class { '::roles::orchestration': }
 ```
 
-### `roles::puppetmaster`
+### <a name="rolespuppetmaster"></a>`roles::puppetmaster`
 
 This class can be used to setup a puppetmaster stack.
 
@@ -133,7 +133,7 @@ This class can be used to setup a puppetmaster stack.
 class { '::roles::puppetmaster': }
 ```
 
-### `roles::qa`
+### <a name="rolesqa"></a>`roles::qa`
 
 This class can be used to setup a basic qa.
 
@@ -145,7 +145,7 @@ This class can be used to setup a basic qa.
 class { '::roles::qa': }
 ```
 
-### `roles::repo`
+### <a name="rolesrepo"></a>`roles::repo`
 
 This class can be used to setup a repository.
 
@@ -157,7 +157,7 @@ This class can be used to setup a repository.
 class { '::roles::repo': }
 ```
 
-### `roles::scheduler`
+### <a name="rolesscheduler"></a>`roles::scheduler`
 
 This class can be used to setup a scheduler stack.
 
@@ -169,7 +169,7 @@ This class can be used to setup a scheduler stack.
 class { '::roles::scheduler': }
 ```
 
-### `roles::storage`
+### <a name="rolesstorage"></a>`roles::storage`
 
 This class can be used to setup a storage stack.
 
@@ -181,7 +181,7 @@ This class can be used to setup a storage stack.
 class { '::roles::storage': }
 ```
 
-### `roles::streaming`
+### <a name="rolesstreaming"></a>`roles::streaming`
 
 This class can be used to setup a streaming stack.
 
@@ -193,7 +193,7 @@ This class can be used to setup a streaming stack.
 class { '::roles::streaming': }
 ```
 
-### `roles::tracing`
+### <a name="rolestracing"></a>`roles::tracing`
 
 This class can be used to setup a tracing stack.
 
@@ -205,7 +205,7 @@ This class can be used to setup a tracing stack.
 class { '::roles::tracing': }
 ```
 
-### `roles::website`
+### <a name="roleswebsite"></a>`roles::website`
 
 This class can be used to setup a webserver node.
 

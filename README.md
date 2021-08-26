@@ -1,10 +1,10 @@
-# attachmentgenie-role3s
+# attachmentgenie-roles
 
-[![](https://img.shields.io/puppetforge/pdk-version/attachmentgenie/role3s.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/role3s)
-[![](https://img.shields.io/puppetforge/v/attachmentgenie/role3s.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/role3s)
-[![](https://img.shields.io/puppetforge/dt/attachmentgenie/role3s.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/role3s)
-[![](https://travis-ci.org/attachmentgenie/attachmentgenie-role3s.svg?branch=master)](https://travis-ci.org/attachmentgenie/attachmentgenie-role3s)
-[![License](https://img.shields.io/github/license/attachmentgenie/attachmentgenie-role3s?stype=popout)](https://github.com/attachmentgenie/attachmentgenie-role3s/blob/master/LICENSE)
+[![](https://img.shields.io/puppetforge/pdk-version/attachmentgenie/roles.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/roles)
+[![](https://img.shields.io/puppetforge/v/attachmentgenie/roles.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/roles)
+[![](https://img.shields.io/puppetforge/dt/attachmentgenie/roles.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/roles)
+[![](https://travis-ci.org/attachmentgenie/attachmentgenie-roles.svg?branch=master)](https://travis-ci.org/attachmentgenie/attachmentgenie-roles)
+[![License](https://img.shields.io/github/license/attachmentgenie/attachmentgenie-roles?stype=popout)](https://github.com/attachmentgenie/attachmentgenie-roles/blob/master/LICENSE)
 
 - [Description](#description)
 - [Usage](#usage)
@@ -15,7 +15,7 @@
 
 ## Description
 
-Collection of roles i find useful.
+Collection of roles, works together with [attachmentgenie-profiles](https://github.com/attachmentgenie-profiles)
 
 ## Usage
 
