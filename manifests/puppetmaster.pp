@@ -4,12 +4,15 @@
 #  class { '::roles::puppetmaster': }
 #
 class roles::puppetmaster inherits roles::node {
-  anchor { 'puppetmaster::begin': }
-  -> class { 'profiles::cache': }
-  -> class { 'profiles::testing': }
-  -> class { 'profiles::database': }
-  -> class { 'profiles::puppet': }
-  -> anchor { 'puppetmaster::end': }
+  contain 'profiles::cache'
+  contain 'profiles::testing'
+  contain 'profiles::database'
+  contain 'profiles::puppet'
+
+  Class['profiles::cache']
+  -> Class['profiles::testing']
+  -> Class['profiles::database']
+  -> Class['profiles::puppet']
 
   if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::puppet::puppetdb']) {
     Postgresql::Server::Db <||> -> Class['puppetdb::server']

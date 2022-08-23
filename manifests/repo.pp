@@ -4,8 +4,9 @@
 #  class { '::roles::repo': }
 #
 class roles::repo inherits roles::node {
-  anchor { 'repo::begin': }
-  -> class { 'profiles::repo': }
-  -> class { 'profiles::website': }
-  -> anchor { 'repo::end': }
+  contain 'profiles::repo'
+  contain 'profiles::website'
+
+  Class['profiles::repo']
+  -> Class['profiles::website']
 }

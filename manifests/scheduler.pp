@@ -4,7 +4,5 @@
 #  class { '::roles::scheduler': }
 #
 class roles::scheduler inherits roles::node {
-  anchor { 'scheduler::begin': }
-  -> class { 'profiles::scheduling': }
-  -> anchor { 'scheduler::end': }
+  class { 'profiles::scheduling': }
 }

@@ -7,8 +7,6 @@ describe 'roles::storage' do
       context 'with defaults for all parameters' do
         it { is_expected.to contain_class('roles::storage') }
         it { is_expected.to contain_class('roles::node') }
-        it { is_expected.to contain_anchor('storage::begin') }
-        it { is_expected.to contain_anchor('storage::end') }
       end
     end
   end

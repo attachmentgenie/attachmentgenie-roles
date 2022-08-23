@@ -4,8 +4,9 @@
 #  class { '::roles::qa': }
 #
 class roles::qa inherits roles::node {
-  anchor { 'qa::begin': }
-  -> class { 'profiles::testing': }
-  -> class { 'profiles::website': }
-  -> anchor { 'qa::end': }
+  contain 'profiles::testing'
+  contain 'profiles::website'
+
+  Class['profiles::testing']
+  -> Class['profiles::website']
 }

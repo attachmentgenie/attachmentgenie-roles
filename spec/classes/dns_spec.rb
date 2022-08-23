@@ -7,8 +7,6 @@ describe 'roles::dns' do
       context 'with defaults for all parameters' do
         it { is_expected.to contain_class('roles::dns') }
         it { is_expected.to contain_class('roles::node') }
-        it { is_expected.to contain_anchor('dns::begin') }
-        it { is_expected.to contain_anchor('dns::end') }
       end
     end
   end

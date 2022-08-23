@@ -4,7 +4,5 @@
 #  class { '::roles::website': }
 #
 class roles::website inherits roles::node {
-  anchor { 'website::begin': }
-  -> class { 'profiles::website': }
-  -> anchor { 'website::end': }
+  class { 'profiles::website': }
 }

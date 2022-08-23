@@ -7,8 +7,6 @@ describe 'roles::tracing' do
       context 'with defaults for all parameters' do
         it { is_expected.to contain_class('roles::tracing') }
         it { is_expected.to contain_class('roles::node') }
-        it { is_expected.to contain_anchor('tracing::begin') }
-        it { is_expected.to contain_anchor('tracing::end') }
       end
     end
   end

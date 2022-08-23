@@ -7,8 +7,6 @@ describe 'roles::scheduler' do
       context 'with defaults for all parameters' do
         it { is_expected.to contain_class('roles::scheduler') }
         it { is_expected.to contain_class('roles::node') }
-        it { is_expected.to contain_anchor('scheduler::begin') }
-        it { is_expected.to contain_anchor('scheduler::end') }
       end
     end
   end

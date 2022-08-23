@@ -4,9 +4,11 @@
 #  class { '::roles::tracing': }
 #
 class roles::tracing inherits roles::node {
-  anchor { 'tracing::begin': }
-  -> class { 'profiles::cache': }
-  -> class { 'profiles::tracing': }
-  -> class { 'profiles::website': }
-  -> anchor { 'tracing::end': }
+  contain 'profiles::cache'
+  contain 'profiles::tracing'
+  contain 'profiles::website'
+
+  Class['profiles::cache']
+  -> Class['profiles::tracing']
+  -> Class['profiles::website']
 }

@@ -4,14 +4,21 @@
 #  class { '::roles::node': }
 #
 class roles::node {
-  anchor { 'node::begin': }
-  -> class { 'profiles::bootstrap': }
-  -> class { 'profiles::tools': }
-  -> class { 'profiles::mail': }
-  -> class { 'profiles::metrics': }
-  -> class { 'profiles::monitoring': }
-  -> class { 'profiles::orchestration': }
-  -> class { 'profiles::runtime': }
-  -> class { 'profiles::security': }
-  -> anchor { 'node::end': }
+  contain 'profiles::bootstrap'
+  contain 'profiles::tools'
+  contain 'profiles::mail'
+  contain 'profiles::metrics'
+  contain 'profiles::monitoring'
+  contain 'profiles::orchestration'
+  contain 'profiles::runtime'
+  contain 'profiles::security'
+
+  Class['profiles::bootstrap']
+  -> Class['profiles::tools']
+  -> Class['profiles::mail']
+  -> Class['profiles::metrics']
+  -> Class['profiles::monitoring']
+  -> Class['profiles::orchestration']
+  -> Class['profiles::runtime']
+  -> Class['profiles::security']
 }

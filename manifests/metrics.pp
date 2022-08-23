@@ -4,11 +4,13 @@
 #  class { '::roles::metrics': }
 #
 class roles::metrics inherits roles::node {
-  anchor { 'metrics::begin': }
-  -> class { 'profiles::database': }
-  -> class { 'profiles::alerting': }
-  -> class { 'profiles::website': }
-  -> anchor { 'metrics::end': }
+  contain 'profiles::database'
+  contain 'profiles::alerting'
+  contain 'profiles::website'
+
+  Class['profiles::database']
+  -> Class['profiles::alerting']
+  -> Class['profiles::website']
 
   if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::metrics::graphite_web']) {
     Postgresql::Server::Db <||> -> Exec['fill postgresql database']

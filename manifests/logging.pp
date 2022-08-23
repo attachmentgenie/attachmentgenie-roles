@@ -4,9 +4,11 @@
 #  class { '::roles::logging': }
 #
 class roles::logging inherits roles::node {
-  anchor { 'logging::begin': }
-  -> class { 'profiles::cache': }
-  -> class { 'profiles::logging': }
-  -> class { 'profiles::website': }
-  -> anchor { 'logging::end': }
+  contain 'profiles::cache'
+  contain 'profiles::logging'
+  contain 'profiles::website'
+
+  Class['profiles::cache']
+  -> Class['profiles::logging']
+  -> Class['profiles::website']
 }
