@@ -5,6 +5,6 @@
 #
 class roles::database inherits roles::node {
   anchor { 'database::begin': }
-  -> class { '::profiles::database': }
+  -> class { 'profiles::database': }
   -> anchor { 'database::end': }
 }

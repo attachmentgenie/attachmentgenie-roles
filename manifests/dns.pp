@@ -5,6 +5,6 @@
 #
 class roles::dns inherits roles::node {
   anchor { 'dns::begin': }
-  -> class { '::profiles::dns': }
+  -> class { 'profiles::dns': }
   -> anchor { 'dns::end': }
 }

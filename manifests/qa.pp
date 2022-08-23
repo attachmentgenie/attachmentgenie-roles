@@ -5,7 +5,7 @@
 #
 class roles::qa inherits roles::node {
   anchor { 'qa::begin': }
-  -> class { '::profiles::testing': }
-  -> class { '::profiles::website': }
+  -> class { 'profiles::testing': }
+  -> class { 'profiles::website': }
   -> anchor { 'qa::end': }
 }

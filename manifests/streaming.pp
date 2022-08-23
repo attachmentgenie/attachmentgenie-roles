@@ -5,6 +5,6 @@
 #
 class roles::streaming inherits roles::node {
   anchor { 'streaming::begin': }
-  -> class { '::profiles::streaming': }
+  -> class { 'profiles::streaming': }
   -> anchor { 'streaming::end': }
 }

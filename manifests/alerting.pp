@@ -5,9 +5,9 @@
 #
 class roles::alerting inherits roles::node {
   anchor { 'alerting::begin': }
-  -> class { '::profiles::database': }
-  -> class { '::profiles::alerting': }
-  -> class { '::profiles::website': }
+  -> class { 'profiles::database': }
+  -> class { 'profiles::alerting': }
+  -> class { 'profiles::website': }
   -> anchor { 'alerting::end': }
 
   if defined(Class['profiles::database::postgresql']) and defined(Class['profiles::monitoring::icinga2']) {

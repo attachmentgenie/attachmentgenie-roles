@@ -5,7 +5,7 @@
 #
 class roles::repo inherits roles::node {
   anchor { 'repo::begin': }
-  -> class { '::profiles::repo': }
-  -> class { '::profiles::website': }
+  -> class { 'profiles::repo': }
+  -> class { 'profiles::website': }
   -> anchor { 'repo::end': }
 }

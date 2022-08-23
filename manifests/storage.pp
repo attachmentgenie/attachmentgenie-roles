@@ -5,6 +5,6 @@
 #
 class roles::storage inherits roles::node {
   anchor { 'storage::begin': }
-  -> class { '::profiles::storage': }
+  -> class { 'profiles::storage': }
   -> anchor { 'storage::end': }
 }

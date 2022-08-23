@@ -5,13 +5,13 @@
 #
 class roles::node {
   anchor { 'node::begin': }
-  -> class { '::profiles::bootstrap': }
-  -> class { '::profiles::tools': }
-  -> class { '::profiles::mail': }
-  -> class { '::profiles::metrics': }
-  -> class { '::profiles::monitoring': }
-  -> class { '::profiles::orchestration': }
-  -> class { '::profiles::runtime': }
-  -> class { '::profiles::security': }
+  -> class { 'profiles::bootstrap': }
+  -> class { 'profiles::tools': }
+  -> class { 'profiles::mail': }
+  -> class { 'profiles::metrics': }
+  -> class { 'profiles::monitoring': }
+  -> class { 'profiles::orchestration': }
+  -> class { 'profiles::runtime': }
+  -> class { 'profiles::security': }
   -> anchor { 'node::end': }
 }

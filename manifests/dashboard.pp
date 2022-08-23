@@ -5,7 +5,7 @@
 #
 class roles::dashboard inherits roles::node {
   anchor { 'dashboard::begin': }
-  -> class { '::profiles::dashboard': }
-  -> class { '::profiles::website': }
+  -> class { 'profiles::dashboard': }
+  -> class { 'profiles::website': }
   -> anchor { 'dashboard::end': }
 }
