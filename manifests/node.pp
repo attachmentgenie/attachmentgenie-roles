@@ -9,11 +9,13 @@ class roles::node {
   contain 'profiles::mail'
   contain 'profiles::metrics'
   contain 'profiles::monitoring'
+  contain 'profiles::networking'
   contain 'profiles::orchestration'
   contain 'profiles::runtime'
   contain 'profiles::security'
 
   Class['profiles::bootstrap']
+  -> Class['profiles::networking']
   -> Class['profiles::tools']
   -> Class['profiles::mail']
   -> Class['profiles::metrics']
